@@ -17,19 +17,21 @@ enum class LogLevel{
 class Logger
 {
     private:
-        LogLevel minimumLevel;
+        LogLevel minimumLevel;    //Setting the minimum loglevel to be printed
 
     public:
-        explicit Logger(LogLevel level = LogLevel::DEBUG);
+        explicit Logger(LogLevel level = LogLevel::DEBUG);    /*Constructor with default value
+                                                                What does explicit do? - It prevents unintended implicit conversion into Logger objects.
+                                                                                         It is useful to safeguard constructor taht accepts one argument.*/
 
-        void setLogLevel(LogLevel level);
+        void setLogLevel(LogLevel level);   //Function Prototype - Responsible to change minimum logging level
 
-        void log(LogLevel level, const std::string& message);
+        void log(LogLevel level, const std::string& message);    // Logging Functionality - Parameters:- log severity, log message
 
-        void debug(const std::string& message);
-        void info(const std::string& message);
-        void warning(const std::string& message);
-        void error(const std::string& message);
+        void debug(const std::string& message); //Convenience Function 
+        void info(const std::string& message);  //Convenience Function
+        void warning(const std::string& message);  //Convenience Function
+        void error(const std::string& message);  //Convenience Function
 };
 
 #endif
